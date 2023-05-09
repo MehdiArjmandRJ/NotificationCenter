@@ -1,0 +1,46 @@
+<div class="header">
+  <div class="logo" inlineSVG="assets/icons/figma/logo.svg"></div>
+
+  <div class="power-buy">
+    <span class="title">قدرت خرید : </span>
+    <span class="value">34،567،2345</span>
+  </div>
+
+  <div class="time">
+    <div class="time__icon" inlineSVG="assets/icons/figma/time.svg"></div>
+    {{ timeNow | date : "hh:mm:ss" }}
+  </div>
+
+  <div class="notif-box status-modal-icon" #arrowIcon>
+    <div class="notif-icon status-modal-icon" #notificationIcon>
+      <div
+        class="border status-modal-icon"
+        inlineSVG="assets/icons/figma/notification.svg"
+      ></div>
+      <svg
+        class="arrow close status-modal-icon"
+        width="8"
+        height="5"
+        viewBox="0 0 8 5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          [@collapseHorizontally]="animationState"
+          class="status-modal-icon"
+          d="M6.56043 1.5L4.00043 4.06L1.44043 1.5"
+          stroke="#767676"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <!-- <div
+       
+        class="arrow close status-modal-icon"
+        inlineSVG="assets/icons/figma/arrow-down.svg"
+      ></div> -->
+    </div>
+  </div>
+</div>

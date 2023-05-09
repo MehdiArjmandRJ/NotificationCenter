@@ -1,0 +1,97 @@
+.modal-box {
+  width: 35vw;
+  max-height: 50vh;
+  position: absolute;
+  background-color: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0px 0px 2px #000;
+  overflow: auto;
+  top:47px;
+  left:0;
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 1rem;
+    .btn {
+      border: 0;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #5a5151;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .right {
+      display: flex;
+      gap: 8px;
+
+      .active {
+        background-color: #55c095;
+        color: #fff;
+      }
+    }
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 1rem;
+    .single-message {
+      padding: 4px 8px;
+      background: #FAFAFA;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 8px;
+      gap: 8px;
+      ::ng-deep svg {
+        width: 24.82px;
+        height: 24.82px;
+      }
+
+      .first-row {
+        flex: 1;
+        .row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+          .new{
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            color: red;
+            font-size: 10px;
+          }
+          .title {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E3636;
+          }
+
+          .time {
+            font-size: 8.93px;
+            color: #8F8F8F;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .sub-title {
+        font-size: 12px;
+        font-weight: 400;
+        color: #8A8A8A;
+      }
+    }
+
+    .empty {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

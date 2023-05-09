@@ -1,0 +1,35 @@
+<app-header
+  [messageList]="messageList"
+  [mostType]="mostType"
+  [statusModal]="statusModal"
+  (changeModalStatus)="modalStatus($event)"
+></app-header>
+<div class="body">
+  <app-notification></app-notification>
+  <div [@expandCollapse]="statusModal ? 'open' : 'close'">
+    <app-modal
+      [statusMessageBox]="statusMessageBox"
+      [messageList]="messageList"
+      (onReadMessage)="readMessage($event)"
+      (onRemoveMessage)="removeMessage()"
+    ></app-modal>
+  </div>
+  <div id="tv_chart_container"></div>
+  <div class="btn-box">
+    <button
+    class="btn active"
+    type="button"
+    (click)="pushNotificationRandom('Obs')"
+  >
+    نمایش اعلان بیشتر برای ناظر
+  </button>
+  <button
+    class="btn active left"
+    type="button"
+    (click)="pushNotificationRandom('dara')"
+  >
+    نمایش اعلان بیشتر برای تریدر دارا
+  </button>
+  </div>
+</div>
+<app-footer></app-footer>

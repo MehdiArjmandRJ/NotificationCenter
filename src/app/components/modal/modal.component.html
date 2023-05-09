@@ -1,0 +1,50 @@
+<div class="modal-box status-modal notification-StopPropagation">
+  <div class="buttons notification-StopPropagation">
+    <div class="right notification-StopPropagation">
+      <button activeBtn class="btn notification-StopPropagation active" type="button">پیام ناظر من</button>
+      <button #daraMessage activeBtn class="btn notification-StopPropagation" type="button">
+        پیام دارا تریدر
+      </button>
+    </div>
+    <div class="notification-StopPropagation">
+      <button class="btn notification-StopPropagation" type="button" (click)="removeMessage()">
+        حذف همه پیام ها
+      </button>
+    </div>
+  </div>
+
+  <div class="messages notification-StopPropagation">
+    <div
+      class="single-message notification-StopPropagation"
+      *ngFor="let message of getMessage; let index = index"
+      (click)="readMessage(index)"
+    >
+      <div
+        class="notification-StopPropagation"
+        [inlineSVG]="message.icon"
+      ></div>
+      <div class="first-row notification-StopPropagation">
+        <div class="row notification-StopPropagation">
+          <span class="new notification-StopPropagation" [hidden]="message.saw"
+            >جدید
+          </span>
+          <span class="title notification-StopPropagation">{{
+            message.title
+          }}</span>
+          <span class="time notification-StopPropagation">{{
+            message.time
+          }}</span>
+        </div>
+        <span class="sub-title notification-StopPropagation">{{
+          message.subTitle
+        }}</span>
+      </div>
+    </div>
+    <div
+      class="empty notification-StopPropagation"
+      *ngIf="getMessage!.length == 0"
+    >
+      <span class="notification-StopPropagation">پیامی دریافت نکرده اید.</span>
+    </div>
+  </div>
+</div>

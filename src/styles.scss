@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./theme/fonts";
+
+* {
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  font-family: "IRANSansFaNum";
+}
+
+app-root {   z-index: 1; }  
+app-toast, .toast-class {   z-index: 2; }

@@ -1,0 +1,133 @@
+$success: #30c388 !default;
+$warning: #ffa621 !default;
+$error: #ff3844 !default;
+$information: #2e66f9 !default;
+$important-error: #c3121c !default;
+.notification-box {
+  position: absolute;
+  top: 46px;
+  left: 5px;
+  direction: ltr;
+  z-index: 2;
+  height: 95vh;
+  overflow: hidden;
+  // overflow: auto;
+}
+%default-toast {
+  // You indicate a placeholder selected with a preceding '%'
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-flex;
+  width: 258px;
+  min-height: 50px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 48px;
+  // Now we can make our state-specific classes
+}
+
+// Default toast
+.toast-class {
+  @extend %default-toast; // You then add the styles to another selector with the @extend decorator
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  gap: 10px;
+  padding-right: 6px;
+  padding-left: 10px;
+  .icon,
+  .close-btn {
+    height: 32px;
+    ::ng-deep svg {
+      width: 24px;
+      height: 32px;
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 38px;
+    opacity: 0.5;
+    background-color: #ffffffa8;
+  }
+}
+
+.message-box {
+  padding-right: 1rem;
+  .message {
+    font-size: 10px;
+    color: #ebebeb;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+// Success
+.success {
+  @extend %default-toast;
+  background-color: $success;
+  border-left: 6px solid $success;
+}
+
+// Warning
+.warning {
+  @extend %default-toast;
+  background-color: $warning;
+  border-left: 6px solid $warning;
+}
+
+// important_error
+.important-error {
+  @extend %default-toast;
+  background-color: $important-error;
+  border-left: 6px solid $important-error;
+}
+
+// information
+.information {
+  @extend %default-toast;
+  background-color: $information;
+  border-left: 6px solid $information;
+}
+
+// ERROR
+.error {
+  @extend %default-toast;
+  background-color: $error;
+  border-left: 6px solid $error;
+}
+
+.fade-in-image {
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    position: relative;
+    top: -50px;
+    opacity: 0;
+    width: 200px;
+  }
+
+  100% {
+    position: relative;
+    top: 0px;
+    opacity: 1;
+    width: 258px;
+  }
+}

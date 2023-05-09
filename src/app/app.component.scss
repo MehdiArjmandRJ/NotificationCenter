@@ -1,0 +1,36 @@
+.body {
+  height: 79vh;
+  width: 100vw;
+  background-color: #fff;
+  position: relative;
+  .btn-box {
+    position: fixed;
+    bottom: 11vh;
+    right: 2vh;
+
+    .btn {
+      border: 0;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #5a5151;
+      font-size: 12px;
+      padding: 8px 15px;
+      margin: 1rem;
+      cursor: pointer;
+    }
+    .active {
+      background-color: #55c095;
+      color: #fff;
+    }
+  }
+}
+app-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+app-header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
